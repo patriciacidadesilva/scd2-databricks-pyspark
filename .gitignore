@@ -1,0 +1,91 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# =========================
+# Virtual Environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Databricks
+# =========================
+.databricks/
+.dbutils/
+*.dbc
+
+# Databricks notebooks (exportados)
+*_nb.py
+
+# =========================
+# Jupyter / IPython
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Spark / Delta (local artifacts)
+# =========================
+spark-warehouse/
+metastore_db/
+derby.log
+*.delta
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Temporary / Backup files
+# =========================
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# =========================
+# Test / Coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Data files (avoid committing data)
+# =========================
+data/
+*.csv
+*.parquet
+*.json
