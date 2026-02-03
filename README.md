@@ -296,6 +296,43 @@ Se ninguém pergunta “quando mudou” ou “como era antes”, **SCD2 é overe
 
 ---
 
+## 🗂️ Arquitetura do Repositório
+
+A estrutura do repositório foi pensada para separar claramente **orquestração**, **lógica de negócio** e **documentação**, seguindo boas práticas adotadas em projetos de dados em ambientes corporativos.
+
+```text
+scd2-databricks-pyspark/
+├── notebooks/
+│   └── run_job.py
+│       # Arquivo driver (entrypoint)
+│       # Responsável por inicializar o Spark, definir contexto
+│       # e executar o job SCD Type 2
+│
+├── src/
+│   └── scd2_risk_dimension.py
+│       # Implementação principal do SCD Type 2
+│       # Contém toda a lógica de:
+│       # - change detection
+│       # - fechamento de vigência
+│       # - inserção de novas versões
+│       # - controle de idempotência
+│
+├── .gitignore
+│   # Ignora ambientes locais, artefatos de build,
+│   # arquivos temporários e dados sensíveis
+│
+├── requirements.txt
+│   # Dependências do projeto (execução local, CI/CD e documentação)
+│
+├── README.md
+│   # Documentação técnica do projeto
+│
+└── LICENSE
+    # Licença do repositório
+```
+
+---
+
 ## 📈 Possíveis Evoluções
 - Inclusão de **surrogate key** por versão
 - Versionamento de múltiplos atributos
